@@ -1,0 +1,171 @@
+body {
+  background-color: #494444;
+  color: #f1f1f1;
+  font-family: 'Lato', sans-serif;
+}
+
+.relative {
+  position: relative;
+}
+
+.task-app {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 70px;
+  text-align: center;
+  min-height: 500px;
+
+  & h2 {
+    font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+    & .init-message {
+      margin-top: 160px;
+    }
+
+    & .before-message {
+      margin-top: 160px;
+    }
+
+    & .end-message {
+      margin-top: 160px;
+    }
+  }
+
+  & button {
+    font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+    font-style: normal;
+    font-weight: normal;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 90px;
+    border-radius: 45px;
+    border-width: 2px;
+    border-style: solid;
+    text-transform: uppercase;
+  }
+
+  & .timer {
+    position: absolute;
+    top: -80px;
+    right: 0;
+    font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 82px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    width: 100px;
+  }
+
+  & .description {
+    text-align: center;
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  & .conditions {
+    text-align: center;
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  & .chests {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    & ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      & li {
+        display: inline-block;
+        position: relative;
+        width: 16.0%;
+        font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: normal;
+        cursor: pointer;
+
+        & img {
+          width: 100px;
+          height: auto;
+          display: inline-block;
+        }
+
+        & .checkbox {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: auto;
+          background-image: url('/static/img/check-mark.svg');
+          background-position: 74% center;
+          background-repeat: no-repeat;
+          background-size: 16px;
+          z-index: 10;
+        }
+
+        & span {
+          display: block;
+          font-size: 65px;
+          line-height: 55px;
+          margin-top: 10px;
+          margin-bottom: -10px;
+        }
+      }
+    }
+  }
+
+  & .answer {
+    margin-top: 20px;
+    font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 40px;
+  }
+
+  & .form {
+    text-align: center;
+    margin-top: 20px;
+
+    & input {
+      text-align: center;
+      display: inline-block;
+      margin-bottom: 20px;
+      width: 300px;
+      height: 52px;
+      font-size: 20px;
+      border: 2px dotted #fff;
+    }
+
+    & button {
+      font-family: 'ElektraLightPro', Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-style: italic;
+      text-transform: none;
+      padding-top: 5px;
+      width: 150px;
+      height: 52px;
+      font-size: 17px;
+      border-radius: 26px;
+      border: 2px solid #fff;
+
+      &:hover {
+        border-color: #ad7512;
+      }
+    }
+  }
+}
+
+.sl-spinner {
+  margin: 20px auto 0;
+}
