@@ -16,7 +16,7 @@ const store = new Vuex.Store({
     timer: {},
     startTime: 0,
     duration: 0,
-
+    socketMessage: ''
   },
   mutations,
   actions: {
