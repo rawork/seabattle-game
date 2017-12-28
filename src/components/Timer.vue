@@ -1,7 +1,5 @@
 <template>
-    <div class="relative">
-        <div class="timer">{{ timerDisplay }}</div>
-    </div>
+    <div class="timer">{{ timerDisplay }}</div>
 </template>
 
 <script>

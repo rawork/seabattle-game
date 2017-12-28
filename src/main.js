@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import socketio from 'socket.io'
+import socketio from 'socket.io-client'
 import VueSocketIO from 'vue-socket.io'
 import App from './components/App.vue'
 import store from './store'
 
-export const SocketInstance = socketio('http://localhost:4113');
+export const SocketInstance = socketio('http://localhost:8090')
 
 Vue.use(VueSocketIO, SocketInstance, store)
 Vue.config.productionTip = false
@@ -16,6 +16,6 @@ new Vue({
   render: h => h(App),
   components: { App },
   mounted () {
-    store.dispatch('initTask')
+    store.dispatch('initGame')
   }
 })

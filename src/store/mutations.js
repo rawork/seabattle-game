@@ -17,15 +17,16 @@ export const mutations = {
     state.error = error
     state.status = 'error'
   },
-  SOCKET_CONNECT(state) {
-    state.isConnected = true;
+  updateMessage (state, message) {
+    state.chat.newMessage = message
   },
-
-  SOCKET_DISCONNECT(state) {
-    state.isConnected = false;
+  SOCKET_CONNECT (state) {
+    state.isConnected = true
   },
-
-  SOCKET_messageChannel(state, message) {
+  SOCKET_DISCONNECT (state) {
+    state.isConnected = false
+  },
+  SOCKET_MESSAGE_CHANNEL (state, message) {
     state.socketMessage = message
   }
 }
