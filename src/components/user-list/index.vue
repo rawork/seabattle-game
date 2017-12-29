@@ -1,15 +1,17 @@
 <template>
     <div>
         <User v-for="team in teams" :key="team.shooter_id" :team="team"></User>
-        <UserArrow v-for="team in teams" :key="team.shooter_id" :team="team"></UserArrow>
-        <UserMark v-for="team in teams" :key="team.shooter_id" :team="team"></UserMark>
+        <div class="arrow arrow1"></div>
+        <div class="arrow arrow2"></div>
+        <div class="arrow arrow3"></div>
+        <div class="mark-red"></div>
+        <div class="mark-green"></div>
+        <div class="mark-brown"></div>
     </div>
 </template>
 
 <script>
 import User from './User.vue'
-import UserArrow from './UserArrow.vue'
-import UserMark from './UserMark.vue'
 
 const UserList = {
   computed: {
@@ -17,7 +19,7 @@ const UserList = {
       return this.$store.state.teams
     }
   },
-  components: { User, UserArrow, UserMark }
+  components: { User }
 }
 
 export default UserList

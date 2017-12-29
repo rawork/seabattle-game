@@ -4,14 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Multi player game Sea battle</title>
-    <link href="/static/css/normalize.css" rel="stylesheet" media="screen">
-    <link href="/static/css/app.inner.css" rel="stylesheet" media="screen">
+    <link href="/bundles/public/css/normalize.css" rel="stylesheet" media="screen">
+    <link href="/bundles/public/css/app.inner.css" rel="stylesheet" media="screen">
+
+    <!--[if lt IE 9]>
+    <script src="/bundles/ie/html5shiv.js"></script>
+    <script src="/bundles/ie/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <br /><br /><br />
-    <div id="battle-app"></div>
+  <div class="container">
+    <div id="field">
+      <div class="relative">
+        <i class="logo"><a href="/"><img src="/bundles/public/img/logo.png"></a></i>
+        <i class="title">МОРСКОЙ БОЙ</i>
+        <i class="link mainpage">
+          <img class="pull-left" src="/bundles/public/img/mainpage_arrow.png">
+          <a href="/">НА ГЛАВНУЮ</a>
+        </i>
+      </div>
+    </div>
+    <div class="content content-sandbox clearfix">
+      <div class="game-large-container">
+        <div id="battle-app"></div>
+      </div>
+
+    </div>
+    <div class="copyright">2015, Анкор</div>
+  </div>
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="/static/scrollbar/jquery.mCustomScrollbar.js"></script>
+    <script src="/bundles/scrollbar/jquery.mCustomScrollbar.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

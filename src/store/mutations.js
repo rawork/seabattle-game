@@ -17,9 +17,6 @@ export const mutations = {
     state.error = error
     state.status = 'error'
   },
-  updateMessage (state, message) {
-    state.chat.newMessage = message
-  },
   SOCKET_CONNECT (state) {
     state.isConnected = true
   },
@@ -28,5 +25,10 @@ export const mutations = {
   },
   SOCKET_MESSAGE_CHANNEL (state, message) {
     state.socketMessage = message
+  },
+  SOCKET_NEW_MESSAGE (state, message) {
+    const newId = state.chat.messages.length + 1
+    state.chat.messages.push({id: newId, name: 'name' + Math.floor(Math.random() * (10 - 1)) + 1, fullname: 'fullname1', message: message})
+    state.chat.newMessage = ''
   }
 }

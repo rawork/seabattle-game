@@ -1,7 +1,8 @@
-import { SET_QUESTION, SET_TIMER, SET_START_TIME, SET_ERROR } from './mutation-types'
-import battle from '../api/battle'
+import { SET_QUESTION, SET_TIMER, SET_START_TIME } from './mutation-types'
+import { SET_ERROR } from '../mutation-types'
+import battle from '../../api/battle'
 
-let questionInterval;
+let questionInterval
 
 export const actions = {
   getQuestion ({ commit, state }) {
@@ -30,7 +31,7 @@ export const actions = {
       },
       error => {
         console.log(error)
-        commit(SET_ERROR, 'Ошибка получения вопроса, обратитесь к администатору', {root: true})
+        // commit(SET_ERROR, 'Ошибка получения вопроса, обратитесь к администатору', {root: true})
       }
     )
   },
@@ -42,12 +43,15 @@ export const actions = {
           commit(SET_ERROR, response.data.error, {root: true})
           return
         }
-        commit(SET_START_TIME, response.data.startTime)
-        commit(SET_DURATION, response.data.duration)
+        // todo что-то надо сделать с отправленным ответом
+        // если все ок, то надо получить деньги и статус ячейки
+
+        // если нет то
+        commit(SET_TIMER, 0)
       },
       error => {
         console.log(error)
-        commit(SET_ERROR, 'Ошибка отправки ответа, обратитесь к администатору', {root: true})
+        // commit(SET_ERROR, 'Ошибка отправки ответа, обратитесь к администатору', {root: true})
       }
     )
   }

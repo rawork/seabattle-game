@@ -92,7 +92,7 @@
     width: 74px;
     height: 238px;
     top: 80px;
-    background-image: url('/static/img/battle/arrow1.png');
+    background-image: url('../img/arrow1.png');
     background-position: 0 0;
     background-repeat: no-repeat;
   }
@@ -101,7 +101,7 @@
     width: 71px;
     height: 52px;
     top: 270px;
-    background-image: url('/static/img/battle/arrow2.png');
+    background-image: url('../img/arrow2.png');
     background-position: 0 0;
     background-repeat: no-repeat;
   }
@@ -110,7 +110,7 @@
     width: 77px;
     height: 239px;
     top: 300px;
-    background-image: url('/static/img/battle/arrow3.png');
+    background-image: url('../img/arrow3.png');
     background-position: 0 0;
     background-repeat: no-repeat;
   }
@@ -121,7 +121,7 @@
     height: 40px;
     top: 30px;
     left: 0;
-    background-image: url('/static/img/battle/gamer_red.png');
+    background-image: url('../img/gamer_red.png');
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 10;
@@ -133,7 +133,7 @@
     height: 39px;
     top: 415px;
     left: 0;
-    background-image: url('/static/img/battle/gamer_green.png');
+    background-image: url('../img/gamer_green.png');
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 10;
@@ -145,7 +145,7 @@
     height: 39px;
     top: 225px;
     left: 0;
-    background-image: url('/static/img/battle/gamer_brown.png');
+    background-image: url('../img/gamer_brown.png');
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 10;
@@ -170,7 +170,7 @@
     height: 347px;
     top: 118px;
     left: 220px;
-    background-image: url('/static/img/battle/field.png');
+    background-image: url('../img/field.png');
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 2;
@@ -184,7 +184,7 @@
     z-index: 10;
 
     &.active:hover {
-      background-image: url('/static/img/battle/aim.png');
+      background-image: url('../img/aim.png');
       background-position: 0 0;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -693,56 +693,56 @@
   }
 
   .ship-red {
-    background-image: url('/static/img/battle/ship_red.png');
+    background-image: url('../img/ship_red.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .ship-red-killed {
-    background-image: url('/static/img/battle/ship_red_killed.png');
+    background-image: url('../img/ship_red_killed.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .ship-green {
-    background-image: url('/static/img/battle/ship_green.png');
+    background-image: url('../img/ship_green.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .ship-green-killed {
-    background-image: url('/static/img/battle/ship_green_killed.png');
+    background-image: url('../img/ship_green_killed.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .ship-brown {
-    background-image: url('/static/img/battle/ship_brown.png');
+    background-image: url('../img/ship_brown.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .ship-brown-killed {
-    background-image: url('/static/img/battle/ship_brown_killed.png');
+    background-image: url('../img/ship_brown_killed.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .cell-empty {
-    background-image: url('/static/img/battle/empty.png');
+    background-image: url('../img/empty.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .imperial-part {
     background-color: rgba(0,0,0,0.75);
-    background-image: url('/static/img/battle/empty.png');
+    background-image: url('../img/empty.png');
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 
   .imperial-h {
-    background-image: url("/static/img/battle/imperial_killed_h.png");
+    background-image: url("../img/imperial_killed_h.png");
     background-position: 0 0;
     background-repeat: no-repeat;
     position: absolute;
@@ -754,7 +754,7 @@
   }
 
   .imperial-v {
-    background-image: url("/static/img/battle/imperial_killed_v.png");
+    background-image: url("../img/imperial_killed_v.png");
     background-position: 0 0;
     background-repeat: no-repeat;
     position: absolute;
@@ -788,6 +788,7 @@
   }
 
   .user-panel {
+    color: #ee0000;
     font-family: 'Beryozki', Arial, sans-serif;
     font-size: 30px;
     position: absolute;
@@ -800,13 +801,13 @@
   }
 
   .connection-panel {
-    font-family: 'Beryozki', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 30px;
+    font-family: 'ElektraLightPro', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 20px;
     position: absolute;
     width: 315px;
     height: 40px;
-    top: 510px;
+    top: 540px;
     left: 241px;
     border: 0 solid #fff;
     text-align: center;
@@ -815,6 +816,10 @@
 
 .sl-spinner {
   margin: 20px auto 0;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
 }
 
 @import "./chat";

@@ -16,7 +16,7 @@
                     <input type="radio" id="answer_3" v-model="answer" value="3" />
                     <label for="answer_3" v-bind:click="setAnswer(3)">{{question.answer3}}</label>
                 </div>
-                {{answerNum}}
+                {{answer}}
                 <button class="btn" v-bind:click="onSubmit">Ответить</button>
             </div>
         </div>
@@ -41,13 +41,13 @@ const Question = {
         return this.$store.state.question.answer
       },
       set (value) {
-        this.$store.commit('question/updateAnswer', value)
+        this.$store.commit('question/SET_ANSWER', value)
       }
     }
   },
   methods: {
     setAnswer (e, value) {
-      this.$store.commit('question/updateAnswer', value)
+      this.$store.commit('question/SET_ANSWER', value)
     },
     onSubmit () {
       this.$store.dispatch('question/saveAnswer')

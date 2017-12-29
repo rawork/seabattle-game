@@ -1,6 +1,8 @@
 import { mutations } from './mutations'
+import { actions } from './actions'
 
 const moduleQuestion = {
+  namespaced: true,
   state: {
     question: {},
     timer: 0,
@@ -8,7 +10,8 @@ const moduleQuestion = {
     duration: 25,
     answer: null
   },
-  mutations
+  mutations,
+  actions
 }
 
 export default moduleQuestion

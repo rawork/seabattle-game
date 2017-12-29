@@ -4,7 +4,12 @@
   top: 20px;
   right: 0;
 
+  form {
+    padding-right: 40px;
+  }
+
   input {
+    float: left;
     width: 290px;
     height: 54px;
     border: 2px dotted #fff;
@@ -13,12 +18,15 @@
   }
 
   button.btn {
+    float: right;
+    font-family: 'ElektraLightPro', Arial, sans-serif;
     border: 2px solid #fff;
     border-radius: 27px;
     margin-left: 20px;
     height: 54px;
     width: 130px;
-    font-size: 16px;
+    font-size: 14px;
+    padding-top: 5px;
 
     &:hover {
       border-color: #ad7512;

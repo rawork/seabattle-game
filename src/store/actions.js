@@ -3,19 +3,20 @@ import battle from '../api/battle'
 
 let timerInterval
 let timerShotInterval
-let timerQuestionInterval
 
 export const actions = {
-  initGame ({ commit, state }) {
+  initGame ({ dispatch, commit, state }) {
     battle.getData(
       response => {
+        console.log(response.data)
         if (response.data.error) {
           commit(SET_ERROR, response.data.error)
           return
         }
-        commit(SET_START_TIME, Math.ceil(new Date().getTime() / 1000))
-        // commit(SET_START_TIME, response.data.startTime)
-        commit(SET_DURATION, response.data.duration)
+        // commit(SET_START_TIME, Math.ceil(new Date().getTime() / 1000))
+        commit(SET_START_TIME, response.data.timer.start)
+        commit(SET_DURATION, response.data.timer.duration)
+        commit(SET_TEAMS, response.data.teams)
         timerInterval = setInterval(function () {
           const startTime = state.startTime
           const stopTime = state.startTime + (state.duration * 60)
@@ -46,42 +47,6 @@ export const actions = {
   shoot ({ commit, state }) {
 
   },
-  getQuestion ({ commit, state }) {
-    battle.getQuestion(
-      response => {
-        if (response.data.error) {
-          commit(SET_ERROR, response.data.error)
-          return
-        }
-        commit(SET_START_TIME, response.data.startTime)
-        commit(SET_DURATION, response.data.duration)
-        timerQuestionInterval = setInterval(function () {
-          const startTime = state.questionStartTime
-          const stopTime = state.startTime + (state.questionDuration)
-          const currentTime = Math.ceil(new Date().getTime() / 1000)
-
-          if (currentTime >= stopTime) {
-            clearInterval(timerQuestionInterval)
-            commit(SET_STATUS, 'after')
-          } else if (currentTime < startTime) {
-            commit(SET_STATUS, 'before')
-          } else {
-            let timerSeconds = stopTime - currentTime
-            let timerMinutes = Math.floor(timerSeconds / 60)
-            timerSeconds = Math.ceil(timerSeconds - timerMinutes * 60)
-            commit(SET_TIMER, {minutes: timerMinutes, seconds: timerSeconds})
-            if (state.status !== 'error') {
-              commit(SET_STATUS, 'game')
-            }
-          }
-        }, 1000)
-      },
-      error => {
-        console.log(error)
-        commit(SET_ERROR, 'Ошибка получения вопроса, обратитесь к администатору')
-      }
-    )
-  },
   setShooter ({ commit, state }) {
     timerShotInterval = setInterval(function () {
       const startTime = state.shotStartTime
@@ -106,6 +71,9 @@ export const actions = {
   },
   socket_messageChannel: (context, message) => {
     context.commit('SOCKET_MESSAGE_CHANNEL', message)
+  },
+  socket_newMessage: (context, message) => {
+    context.commit('SOCKET_NEW_MESSAGE', message)
   }
   // ,
   // socket_connect: (context) => {

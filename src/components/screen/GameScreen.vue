@@ -6,6 +6,7 @@
     <Field></Field>
     <Chat></Chat>
     <Question></Question>
+    <SocketBlock></SocketBlock>
   </div>
 </template>
 
@@ -16,11 +17,12 @@
   import UserList from '../user-list/index.vue'
   import Field from '../field/index.vue'
   import Chat from '../chat/index.vue'
+  import SocketBlock from '../SocketBlock.vue'
 
   const GameScreen = {
     name: 'gamescreen',
     components: {
-      Timer, Question, ShotTimer, UserList, Field, Chat
+      Timer, Question, ShotTimer, UserList, Field, Chat, SocketBlock
     },
     computed: {
       isAnswered () {

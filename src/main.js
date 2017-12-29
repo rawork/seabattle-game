@@ -4,7 +4,7 @@ import VueSocketIO from 'vue-socket.io'
 import App from './components/App.vue'
 import store from './store'
 
-export const SocketInstance = socketio('http://localhost:8090')
+export const SocketInstance = socketio('http://localhost:8080')
 
 Vue.use(VueSocketIO, SocketInstance, store)
 Vue.config.productionTip = false
@@ -17,5 +17,6 @@ new Vue({
   components: { App },
   mounted () {
     store.dispatch('initGame')
+    store.dispatch('chat/getMessages')
   }
 })

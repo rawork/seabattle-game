@@ -7,19 +7,25 @@
 
 <script>
 import { mapState } from 'vuex'
+import { SET_NEW_MESSAGE } from '../../store/chat/mutation-types'
 
 const ChatForm = {
+  name: 'chat-form',
   computed: {
     ...mapState({
-      newMessage: state => state.chatNewMessage
+      newMessage: state => state.chat.newMessage
     })
   },
   methods: {
     onSubmit () {
-      this.$socket.emit('pingServer', this.$store.state.chatNewMessage)
+      const message = this.$store.state.chat.newMessage
+      if (message) {
+        this.$socket.emit('newMessage', message)
+//      this.$store.dispatch('chat/addMessage', message)
+      }
     },
     updateNewMessage (e) {
-      this.$store.commit('updateMessage', e.target.value)
+      this.$store.commit('chat/' + SET_NEW_MESSAGE, e.target.value)
     }
   }
 }

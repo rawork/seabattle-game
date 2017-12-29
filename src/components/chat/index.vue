@@ -1,24 +1,24 @@
 <template>
     <div class="chat-app">
         <div class="message-container">
-            <ChatMessage v-for="message in messages" :key="message.id" :message="message"></ChatMessage>
+            <message v-for="message in messages" :key="message.id" :message="message"></message>
         </div>
-        <ChatForm></ChatForm>
+        <chat-form></chat-form>
     </div>
 </template>
 
 <script>
-import ChatMessage from './ChatMessage.vue'
+import Message from './Message.vue'
 import ChatForm from './ChatForm.vue'
 
 const Chat = {
   computed: {
     messages () {
-      return this.$store.state.chatMessages
+      return this.$store.state.chat.messages
     }
   },
   components: {
-    ChatMessage, ChatForm
+    Message, ChatForm
   }
 }
 

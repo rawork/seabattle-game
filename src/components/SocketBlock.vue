@@ -1,8 +1,8 @@
 <template>
     <div class="connection-panel">
         <p v-if="isConnected">Вы подключены к игре</p>
-        <p>Message from server: "{{socketMessage}}"</p>
-        <button @click="pingServer()">Ping Server</button>
+        <!--<p>Message from server: "{{socketMessage}}"</p>-->
+        <!--<button @click="pingServer()">Ping Server</button>-->
     </div>
 </template>
 
@@ -15,11 +15,12 @@
       isConnected () {
         return this.$store.state.isConnected
       }
-    },
-    methods: {
-      pingServer () {
-        this.$socket.emit('pingServer', 'PING!')
-      }
     }
+//    ,
+//    methods: {
+//      pingServer () {
+//        this.$socket.emit('pingServer', 'PING!')
+//      }
+//    }
   }
 </script>
