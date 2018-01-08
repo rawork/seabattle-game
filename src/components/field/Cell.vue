@@ -1,6 +1,6 @@
 <template>
     <div v-if="isShooter" class="cell" v-bind:class="[cellClass, activeCLass]" v-on:click="onClick" />
-    <div v-else class="cell" v-bind:class="[cellClass, activeCLass]" />
+    <div v-else class="cell" v-bind:class="[cellClass, activeClass]" />
 </template>
 
 <script>

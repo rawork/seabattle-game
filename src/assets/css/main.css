@@ -2,7 +2,7 @@
   /*text-align: center;*/
   width: 1200px;
   min-height: 600px;
-  margin: 0 auto; }
+  margin: 0 -96px; }
   .battle-app .timer {
     text-align: center;
     font-family: 'Beryozki', Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -488,7 +488,7 @@
     top: 369px;
     left: 368px; }
   .battle-app .imperial-v {
-    background-image: url("./img/imperial_killed_v.png");
+    background-image: url("../img/imperial_killed_v.png");
     background-position: 0 0;
     background-repeat: no-repeat;
     position: absolute;

@@ -15,7 +15,7 @@ const store = new Vuex.Store({
     isShooter: false,
     startTime: 0,
     duration: 0,
-    user: o,
+    user: null,
     shooter: 0,
     shooter_timer: 0,
     battle: 0,
@@ -24,7 +24,8 @@ const store = new Vuex.Store({
     timerShot: 20,
     shotDuration: 30,
     isConnected: false,
-    socketMessage: ''
+    socketMessage: '',
+    currentTime: 0
   },
   mutations,
   actions,

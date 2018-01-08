@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <h2 class="before-message">Время начала игры<br>{{ time }}</h2><br><button class="btn" v-on:click="reloadPage">Обновить страницу</button>
+    <div style="text-align: center">
+        <h2 class="before-message">Время начала игры<br>{{ time }}</h2>
+        <br><button class="btn" v-on:click="reloadPage">Обновить страницу</button>
     </div>
 </template>
 

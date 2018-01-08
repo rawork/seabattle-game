@@ -1,4 +1,4 @@
-import { SET_STATUS, SET_TIMER, SET_START_TIME, SET_DURATION, SET_ERROR } from './mutation-types'
+import { SET_STATUS, SET_TIMER, SET_START_TIME, SET_DURATION, SET_ERROR, SET_TEAMS, SET_FIELD, SET_CURRENT } from './mutation-types'
 
 export const mutations = {
   [SET_STATUS] (state, status) {
@@ -16,6 +16,15 @@ export const mutations = {
   [SET_ERROR] (state, error) {
     state.error = error
     state.status = 'error'
+  },
+  [SET_TEAMS] (state, teams) {
+    state.teams = teams
+  },
+  [SET_FIELD] (state, field) {
+    state.field = field
+  },
+  [SET_CURRENT] (state, value) {
+    state.currentTime = value
   },
   SOCKET_CONNECT (state) {
     state.isConnected = true

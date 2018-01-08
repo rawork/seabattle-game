@@ -1,22 +1,33 @@
-import { SET_STATUS, SET_TIMER, SET_START_TIME, SET_DURATION, SET_ERROR } from './mutation-types'
+import { SET_STATUS, SET_TIMER, SET_START_TIME, SET_DURATION, SET_ERROR, SET_TEAMS, SET_FIELD, SET_CURRENT } from './mutation-types'
 import battle from '../api/battle'
 
 let timerInterval
 let timerShotInterval
+let timerCurrent
+let curTime
 
 export const actions = {
   initGame ({ dispatch, commit, state }) {
     battle.getData(
       response => {
-        console.log(response.data)
+        console.log(response.data.field)
         if (response.data.error) {
           commit(SET_ERROR, response.data.error)
           return
         }
         // commit(SET_START_TIME, Math.ceil(new Date().getTime() / 1000))
-        commit(SET_START_TIME, response.data.timer.start)
+        commit(SET_START_TIME, response.data.timer.start - 3600 * 3)
         commit(SET_DURATION, response.data.timer.duration)
         commit(SET_TEAMS, response.data.teams)
+        commit(SET_FIELD, response.data.field)
+        timerCurrent = setInterval(function () {
+          curTime = new Date().getTime()
+          if (curTime >= state.startTime) {
+            clearInterval(timerCurrent)
+          } else {
+            commit(SET_CURRENT, curTime)
+          }
+        }, 1000)
         timerInterval = setInterval(function () {
           const startTime = state.startTime
           const stopTime = state.startTime + (state.duration * 60)
