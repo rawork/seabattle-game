@@ -10,7 +10,6 @@ export const actions = {
   initGame ({ dispatch, commit, state }) {
     battle.getData(
       response => {
-        console.log(response.data.field)
         if (response.data.error) {
           commit(SET_ERROR, response.data.error)
           return

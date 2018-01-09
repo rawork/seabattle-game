@@ -1,4 +1,4 @@
-import { SET_MESSAGES, SET_NEW_MESSAGE } from './mutation-types'
+import { SET_MESSAGES, ADD_MESSAGE } from './mutation-types'
 import { SET_ERROR } from '../mutation-types'
 import battle from '../../api/battle'
 
@@ -26,7 +26,8 @@ export const actions = {
           commit(SET_ERROR, response.data.error, {root: true})
           return
         }
-        commit(SET_NEW_MESSAGE, '')
+        commit(ADD_MESSAGE, response.data.message)
+        this._vm.$socket.emit('newMessage', response.data.message)
       },
       error => {
         console.log(error)

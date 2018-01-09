@@ -20,8 +20,7 @@ const ChatForm = {
     onSubmit () {
       const message = this.$store.state.chat.newMessage
       if (message) {
-        this.$socket.emit('newMessage', message)
-//      this.$store.dispatch('chat/addMessage', message)
+        this.$store.dispatch('chat/addMessage', message)
       }
     },
     updateNewMessage (e) {

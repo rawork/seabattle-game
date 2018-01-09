@@ -5,7 +5,6 @@
     <BeforeScreen v-else-if="status === 'before'"></BeforeScreen>
     <AfterScreen v-else-if="status === 'after'"></AfterScreen>
     <GameScreen v-else></GameScreen>
-    {{time}} = {{start}}
   </div>
 </template>
 
@@ -24,12 +23,6 @@ const App = {
   computed: {
     status () {
       return this.$store.state.status
-    },
-    time () {
-      return this.$store.state.currentTime
-    },
-    start () {
-      return this.$store.state.startTime
     }
   }
 }

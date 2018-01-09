@@ -69,9 +69,9 @@ io.on('connection', function(socket){
   /*
    * Новое сообщение в чате
    */
-  socket.on('newMessage', function(message) {
-    console.log('new message: ' + message);
-    io.emit('newMessage', message);
+  socket.on('newMessage', function(data) {
+    console.log('new message: ' + data.message);
+    io.to(data.battle).emit('newMessage', data.message);
   });
 
   /*

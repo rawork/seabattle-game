@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span><a :title="message.fullname" href="#">{{message.name}}</a>:</span> {{message.message}}
+        <span><a :title="message.lastname" href="#">{{message.name}}</a>:</span> {{message.message}}
     </div>
 </template>
 

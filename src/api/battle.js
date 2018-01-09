@@ -42,6 +42,7 @@ const battle = {
       .catch(error => failureHandler(error))
   },
   addMessage: function (value, successHandler, failureHandler) {
+    console.log(apiChatMessage, value)
     axios.post(apiChatMessage, {message: value})
       .then(response => successHandler(response))
       .catch(error => failureHandler(error))
